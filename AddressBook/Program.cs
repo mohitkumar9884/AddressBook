@@ -13,9 +13,9 @@
             Console.WriteLine("Address: " + contact.Address);
             Console.WriteLine("City: " + contact.City);
             Console.WriteLine("State: " + contact.State);
-            Console.WriteLine("Zip: " + contact.Zip);
+            Console.WriteLine("Zip: " + contact.Zipcode);
             Console.WriteLine("Phone Number: " + contact.PhoneNumber);
-            Console.WriteLine("Email: " + contact.Email);
+            Console.WriteLine("Email: " + contact.EmailAddress);
         }
     }
 }

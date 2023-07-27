@@ -13,34 +13,34 @@ namespace AddressBook
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public string Zip { get; set; }
+        public string Zipcode { get; set; }
         public string PhoneNumber { get; set; }
-        public string Email { get; set; }
+        public string EmailAddress { get; set; }
 
         public static Contact Personal()
         {
-            Console.Write("Enter First Name: ");
+            Console.Write("Enter Your First Name: ");
             string firstName = Console.ReadLine();
 
-            Console.Write("Enter Last Name: ");
+            Console.Write("Enter Your Last Name: ");
             string lastName = Console.ReadLine();
 
-            Console.Write("Enter Address: ");
+            Console.Write("Enter Your Address: ");
             string address = Console.ReadLine();
 
-            Console.Write("Enter City: ");
+            Console.Write("Enter Your City: ");
             string city = Console.ReadLine();
 
-            Console.Write("Enter State: ");
+            Console.Write("Enter Your State: ");
             string state = Console.ReadLine();
 
-            Console.Write("Enter Zip: ");
+            Console.Write("Enter Zipcode: ");
             string zip = Console.ReadLine();
 
-            Console.Write("Enter Phone Number: ");
+            Console.Write("Enter Your Cell Number: ");
             string phoneNumber = Console.ReadLine();
 
-            Console.Write("Enter Email: ");
+            Console.Write("Enter Your Email-id: ");
             string email = Console.ReadLine();
 
             return new Contact
@@ -50,13 +50,10 @@ namespace AddressBook
                 Address = address,
                 City = city,
                 State = state,
-                Zip = zip,
+                Zipcode = zip,
                 PhoneNumber = phoneNumber,
-                Email = email
+                EmailAddress = email
             };
         }
-
-
-
     }
 }
