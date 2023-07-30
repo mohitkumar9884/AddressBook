@@ -15,7 +15,8 @@
                 Console.WriteLine("1. Add a new contact");
                 Console.WriteLine("2. View all contacts");
                 Console.WriteLine("3. Edit an existing contact");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Delete a contact");
+                Console.WriteLine("5. Exit");
                 Console.WriteLine(" ");
 
                 if (int.TryParse(Console.ReadLine(), out int choice))
@@ -32,6 +33,9 @@
                             EditContact();
                             break;
                         case 4:
+                            DeleteContact();
+                            break;
+                        case 5:
                             Environment.Exit(0);
                             break;
                         default:
@@ -44,6 +48,7 @@
                     Console.WriteLine("Invalid input. Please enter a number.");
                 }
             }
+        
 
             static void AddNewContact()
             {
@@ -159,6 +164,22 @@
                 contactToEdit.EmailAddress = Console.ReadLine();
 
                 Console.WriteLine("Contact details updated successfully!");
+            }
+            static void DeleteContact()
+            {
+                Console.Write("Enter the First Name of the contact you want to delete: ");
+                string firstName = Console.ReadLine();
+
+                Contact contactToDelete = addressbook.Find(c => c.FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase));
+
+                if (contactToDelete == null)
+                {
+                    Console.WriteLine("Contact not found.");
+                    return;
+                }
+
+                addressbook.Remove(contactToDelete);
+                Console.WriteLine("Contact deleted successfully!");
             }
         }
 

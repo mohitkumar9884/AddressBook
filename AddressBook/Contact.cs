@@ -8,6 +8,8 @@ namespace AddressBook
 {
     internal class Contact
     {
+        static List<Contact> addressbook = new List<Contact>();
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -55,6 +57,7 @@ namespace AddressBook
                 EmailAddress = email
             };
         }
+
 
     }
 }
