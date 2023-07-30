@@ -24,18 +24,21 @@
                     switch (choice)
                     {
                         case 1:
-                            AddNewContact();
+                            AddExtraContact();
                             break;
                         case 2:
-                            ViewAllContacts();
+                            AddNewContact();
                             break;
                         case 3:
-                            EditContact();
+                            ViewAllContacts();
                             break;
                         case 4:
-                            DeleteContact();
+                            EditContact();
                             break;
                         case 5:
+                            DeleteContact();
+                            break;
+                        case 6:
                             Environment.Exit(0);
                             break;
                         default:
@@ -48,10 +51,29 @@
                     Console.WriteLine("Invalid input. Please enter a number.");
                 }
             }
-        
+        }
 
-            static void AddNewContact()
+        static void AddExtraContact()
+        {
+            while (true)
             {
+                Contact newContact = Contact.Personal();
+
+                addressbook.Add(newContact);
+                Console.WriteLine("New contact added successfully!");
+
+                Console.Write("Do you want to add another contact? (y/n): ");
+                string response = Console.ReadLine();
+                if (response.ToLower() != "y")
+                {
+                    break;
+                }
+            }
+        }
+
+
+        static void AddNewContact()
+        {
                 Console.WriteLine("Enter Contact Details:");
                 Console.Write("First Name: ");
                 string firstName = Console.ReadLine();
@@ -91,7 +113,7 @@
 
                 addressbook.Add(newContact);
                 Console.WriteLine("New contact added successfully!");
-            }
+        }
             static void ViewAllContacts()
             {
                 if (addressbook.Count == 0)
@@ -181,7 +203,7 @@
                 addressbook.Remove(contactToDelete);
                 Console.WriteLine("Contact deleted successfully!");
             }
-        }
+        
 
     }
 
